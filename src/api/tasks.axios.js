@@ -1,7 +1,8 @@
 import axios from "axios";
+import { BASE_URL } from "../utils/const";
 
 export const createTaskRequest = async (task) =>
-  await axios.post("http://localhost:8080/tasks", task);
+  await axios.post(`${BASE_URL}/tasks`, task);
 
 // a los errores los manejo desde formik, por eso lo exporto así
 
