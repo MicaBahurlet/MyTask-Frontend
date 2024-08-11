@@ -12,4 +12,5 @@ export const createTaskRequest = async (task) =>
 
 // a los errores los manejo desde formik, por eso lo exporto así
 
-
+export const deleteTaskRequest = async (id) =>
+  await axios.delete(`${BASE_URL}/tasks/${id}`);
