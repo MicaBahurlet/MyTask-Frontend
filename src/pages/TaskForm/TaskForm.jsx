@@ -9,17 +9,18 @@ function TaskForm() {
           title: "",
           description: "",
         }}
-        onSubmit={async (values) => {
+        onSubmit={async (values, actions) => {
           console.log(values);
           try {
             const response = await createTaskRequest(values);
             console.log(response);
+            actions.resetForm();
           } catch (error) {
             console.log(error);
           }
         }}
       >
-        {({ handleChange, handleSubmit }) => (
+        {({ handleChange, handleSubmit, values, isSubmitting }) => (
           <Form onSubmit={handleSubmit}>
             <label>Title</label>
             <input
@@ -27,6 +28,7 @@ function TaskForm() {
               name="title"
               placeholder="Tarea"
               onChange={handleChange}
+              value={values.title}
             />
 
             <label>Description</label>
@@ -36,9 +38,12 @@ function TaskForm() {
               rows="3"
               placeholder="Descripción de tarea"
               onChange={handleChange}
+              value={values.description}
             />
 
-            <button type="submit">Save</button>
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Guardando..." : "Guardar"}
+            </button>
           </Form>
         )}
       </Formik>
