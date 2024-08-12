@@ -1,6 +1,12 @@
 import { createContext, useContext, useState } from "react";
 
-import { getTasksRequest, deleteTaskRequest, createTaskRequest } from "../api/tasks.axios.js";
+import {
+  getTasksRequest,
+  deleteTaskRequest,
+  createTaskRequest,
+  getTaskRequest,
+  updateTaskRequest,
+} from "../api/tasks.axios.js";
 
 export const TaskContext = createContext();
 
@@ -35,17 +41,36 @@ export const TaskContextProvider = ({ children }) => {
 
   const createTask = async (task) => {
     try {
-       await createTaskRequest(task);
+      await createTaskRequest(task);
       // setTasks([...tasks, response.data]);
       // console.log(response);
-      
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getTask = async (id) => {
+    try {
+      const response = await getTaskRequest(id);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateTask = async (id, newFields) => {
+    try {
+      const response = await updateTaskRequest(id, newFields);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <TaskContext.Provider value={{ tasks, loadTasks, deleteTask, createTask }}>
+    <TaskContext.Provider
+      value={{ tasks, loadTasks, deleteTask, createTask, getTask, updateTask }}
+    >
       {children}
     </TaskContext.Provider>
   );

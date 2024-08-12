@@ -14,3 +14,9 @@ export const createTaskRequest = async (task) =>
 
 export const deleteTaskRequest = async (id) =>
   await axios.delete(`${BASE_URL}/tasks/${id}`);
+
+export const getTaskRequest = async (id) =>
+  await axios.get(`${BASE_URL}/tasks/${id}`);
+
+export const updateTaskRequest = async (id, newFields) =>
+  await axios.put(`${BASE_URL}/tasks/${id}`, newFields);

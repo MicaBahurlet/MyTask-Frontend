@@ -1,9 +1,10 @@
-import { deleteTaskRequest } from "../../api/tasks.axios";
 import { useTasks } from "../../context/taskContext";
+import { useNavigate } from "react-router-dom";
 
 function TaskCard({ task }) {
+  const { deleteTask } = useTasks();
 
-  const { deleteTask  } = useTasks();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -11,7 +12,7 @@ function TaskCard({ task }) {
       <p>{task.description}</p>
       <spam> {task.done === 1 ? "✅" : "⌛"} </spam>
       <spam> {task.createAt} </spam>
-      <button>Editar</button>
+      <button onClick={() => navigate(`/edit/${task.id}`)}>Editar</button>
       <button onClick={() => deleteTask(task.id)}>Borrar</button>
     </div>
   );
