@@ -5,16 +5,20 @@ import TaskForm from "./pages/TaskForm/TaskForm.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
 
+import { TaskContextProvider } from "./context/taskContext.jsx";
+
 function App() {
   return (
-    <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/new" element={<TaskForm />} />
-        <Route path="*" element={<NotFound />} /> 
-      </Routes>
-    </>
+    
+      <TaskContextProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/new" element={<TaskForm />} />
+          <Route path="*" element={<NotFound />} /> 
+        </Routes>
+      </TaskContextProvider>
+    
   );
 }
 

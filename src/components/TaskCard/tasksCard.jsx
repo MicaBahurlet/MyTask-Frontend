@@ -1,14 +1,9 @@
 import { deleteTaskRequest } from "../../api/tasks.axios";
+import { useTasks } from "../../context/taskContext";
 
 function TaskCard({ task }) {
-  const handleDelete = async (id) => {
-    try {
-      const response = await deleteTaskRequest(id);
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
+  const { deleteTask  } = useTasks();
 
   return (
     <div>
@@ -17,7 +12,7 @@ function TaskCard({ task }) {
       <spam> {task.done === 1 ? "✅" : "⌛"} </spam>
       <spam> {task.createAt} </spam>
       <button>Editar</button>
-      <button onClick={() => handleDelete(task.id)}>Borrar</button>
+      <button onClick={() => deleteTask(task.id)}>Borrar</button>
     </div>
   );
 }

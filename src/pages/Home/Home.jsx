@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
-import { getTasksRequest } from "../../api/tasks.axios.js";
-
+import { useEffect } from "react";
 import TaskCard from "../../components/TaskCard/tasksCard.jsx";
 
-function Home() {
-  const [tasks, setTasks] = useState([]);
+import { useTasks } from "../../context/taskContext.jsx";
 
-  useEffect(() => {
-    async function loadTasks() {
-      const response = await getTasksRequest();
-      setTasks(response.data);
-    }
+function Home() {
+
+  const { tasks, loadTasks } = useTasks();
+  
+
+  useEffect(() => { 
     loadTasks();
   }, []);
 
