@@ -20,3 +20,8 @@ export const getTaskRequest = async (id) =>
 
 export const updateTaskRequest = async (id, newFields) =>
   await axios.put(`${BASE_URL}/tasks/${id}`, newFields);
+
+export const toggleTaskDoneRequest = async (id, done) =>
+  await axios.put(`${BASE_URL}/tasks/${id}`, {
+    done, 
+  });
