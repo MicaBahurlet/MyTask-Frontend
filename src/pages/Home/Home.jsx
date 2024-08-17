@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import TaskCard from "../../components/TaskCard/tasksCard.jsx";
 
 import { useTasks } from "../../context/taskContext.jsx";
+import Hero from "../../components/Hero/Hero.jsx";
 
 function Home() {
 
@@ -23,13 +24,18 @@ function Home() {
   }
 
   return (
-    <div>
-      <h2>Mis tareas:</h2>
-
-      {renderMain()}
-
+    <>
       
-    </div>
+      <Hero />
+
+      <div>
+        <h2>Mis tareas:</h2>
+
+        {renderMain()}
+
+        
+      </div>
+    </>  
   );
 }
 

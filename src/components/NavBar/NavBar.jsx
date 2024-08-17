@@ -15,7 +15,9 @@ function NavBar ()  {
                     
                         <NavLinks>
                             <li><Link to="/">Home</Link> </li>
+                            <li><Link to="/login">Iniciar Sesión</Link></li>
                             <li><Link to="/new">Crear Tarea</Link></li>
+                            
                         </NavLinks>
                    
                 
