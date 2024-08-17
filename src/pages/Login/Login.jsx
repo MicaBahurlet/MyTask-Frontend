@@ -13,6 +13,7 @@ import {
   LoginWrapper
 } from './LoginStyles';
 import ImgLogin from '../../img/Task2.png';
+import Footer from '../../components/Footer/Footer.jsx';
 
 const LoginPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,36 +41,39 @@ const LoginPage = () => {
   };
 
   return (
-    <LoginContainer>
-      <ImageContainer>
-        <img src={ImgLogin} alt="Login" />
-      </ImageContainer>
-      <LoginWrapper>
-        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-          {({ isSubmitting }) => (
-            <LoginForm>
-              <h1>Tus datos:</h1>
-              <div>
-                <Field name="firstName" as={LoginField} placeholder="Nombre" />
-                <ErrorMessage name="firstName" component={LoginError} />
-              </div>
-              <div>
-                <Field name="lastName" as={LoginField} placeholder="Apellido" />
-                <ErrorMessage name="lastName" component={LoginError} />
-              </div>
-              <div>
-                <Field name="email" as={LoginField} placeholder="Correo Electrónico" />
-                <ErrorMessage name="email" component={LoginError} />
-              </div>
-              <LoginButton type="submit" disabled={isSubmitting}>
-                {isSubmitting ? <Loader /> : 'Iniciar Sesión'}
-              </LoginButton>
-              <p>¿No tienes una cuenta? <Link to="/register">Regístrate</Link></p>
-            </LoginForm>
-          )}
-        </Formik>
-      </LoginWrapper>
-    </LoginContainer>
+    <>
+      <LoginContainer>
+        <ImageContainer>
+          <img src={ImgLogin} alt="Login" />
+        </ImageContainer>
+        <LoginWrapper>
+          <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+            {({ isSubmitting }) => (
+              <LoginForm>
+                <h1>Tus datos:</h1>
+                <div>
+                  <Field name="firstName" as={LoginField} placeholder="Nombre" />
+                  <ErrorMessage name="firstName" component={LoginError} />
+                </div>
+                <div>
+                  <Field name="lastName" as={LoginField} placeholder="Apellido" />
+                  <ErrorMessage name="lastName" component={LoginError} />
+                </div>
+                <div>
+                  <Field name="email" as={LoginField} placeholder="Correo Electrónico" />
+                  <ErrorMessage name="email" component={LoginError} />
+                </div>
+                <LoginButton type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? <Loader /> : 'Iniciar Sesión'}
+                </LoginButton>
+                <p>¿No tienes una cuenta? <Link to="/register">Regístrate</Link></p>
+              </LoginForm>
+            )}
+          </Formik>
+        </LoginWrapper>
+      </LoginContainer>
+      <Footer />  
+    </>
   );
 };
 
