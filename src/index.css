@@ -1,5 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --primary-font: 'Montserrat', sans-serif;
+    --navFooter-color: #4B0082;
+    --btn-color: #8E2DE2;
     /* --primary-color: #6200ea; 
     --secondary-color: #03dac6; 
     --text-color: #333; 
@@ -9,6 +17,7 @@
 
   body {
     font-family: var(--primary-font);
+    background-color: whitesmoke;
     /* color: var(--text-color);
     background-color: var(--background-color); */
   }

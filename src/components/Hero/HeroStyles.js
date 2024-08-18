@@ -6,7 +6,7 @@ export const HeroContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  padding: 0 90px; 
+  padding: 0 120px; 
 `;
 
 export const HeroContent = styled.div`
@@ -30,7 +30,7 @@ export const HeroDescription = styled.h3`
 export const HeroCTA = styled(Link)`
   display: inline-block;
   padding: 10px 20px;
-  background-color: violet;
+  background-color: var( --btn-color);
   color: white;
   text-decoration: none;
   border-radius: 10px;

@@ -39,7 +39,7 @@ export const LoginField = styled.input`
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  width: 92%;  /* ancho de los imputs */
+  width: 100%;  /* ancho de los imputs */
 
   &:focus {
     border-color: darkviolet;
@@ -51,7 +51,8 @@ export const LoginButton = styled.button`
   padding: 15px;
   border-radius: 10px;
   border: none;
-  background-color: violet;
+  /* background-color: violet; */
+  background-color: var( --btn-color);
   color: white;
   font-size: 1rem;
   cursor: pointer;

@@ -39,7 +39,7 @@ export const RegisterField = styled.input`
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  width: 92%;  /* Asegúrate de que ocupe el ancho completo del contenedor */
+  width: 100%;  /* ancho de inputs */
 
   &:focus {
     border-color: darkviolet;
@@ -51,7 +51,7 @@ export const RegisterButton = styled.button`
   padding: 15px;
   border-radius: 10px;
   border: none;
-  background-color: violet;
+  background-color: var( --btn-color);
   color: white;
   font-size: 1rem;
   cursor: pointer;

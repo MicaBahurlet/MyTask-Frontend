@@ -5,10 +5,12 @@ export const NavContainer = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-    background-color: violet;
+    background: var( --navFooter-color); 
+    /* background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);  */
     color: #fff;
     height: 4rem;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 `;
 
 export const NavLogo = styled.h1`
@@ -35,7 +37,7 @@ export const NavLinks = styled.ul`
             }
 
             &:hover {
-                color: darkviolet;
+                font-weight: 800;
             }
         }
     }

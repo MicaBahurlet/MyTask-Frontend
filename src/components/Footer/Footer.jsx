@@ -1,22 +1,27 @@
 import React from 'react';
-import { FooterContainer, FooterContent, IconContainer, Icon } from './FooterStyles';
-// import ReactIcon from '../../img/react-icon.png';  
-// import MysqlIcon from '../../img/mysql-icon.png';
-// import DockerIcon from '../../img/docker-icon.png';
-// import DveaderIcon from '../../img/dveader-icon.png';
+import { FooterContainer, FooterContent, IconContainer, Icon,LogoMioContainer } from './FooterStyles';
+import ReactIcon from '../../img/react.png';  
+import MysqlIcon from '../../img/mysql.png';
+import DockerIcon from '../../img/docker.png';
+import NodeIcon from '../../img/nodejs.png';
+import LogoMio from '../../img/LogoBlanco.png';
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
         <p>Desarrollado con:</p>
-        {/* <IconContainer>
+        <IconContainer>
           <Icon src={ReactIcon} alt="React" />
           <Icon src={MysqlIcon} alt="MySQL" />
           <Icon src={DockerIcon} alt="Docker" />
-          <Icon src={DveaderIcon} alt="Dveader" />
-        </IconContainer> */}
+          <Icon src={NodeIcon} alt="Dveader" />
+        </IconContainer>
       </FooterContent>
+      <LogoMioContainer>
+          <img src={LogoMio} alt="Logo" />
+      </LogoMioContainer>
+
     </FooterContainer>
   );
 };
