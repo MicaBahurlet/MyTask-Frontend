@@ -15,10 +15,11 @@ export const FooterContainer = styled.footer`
 
 export const FooterContent = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content : center; 
   max-width: 50%; 
-  margin: 0;
+  gap: 3rem;
 
   p {
     font-size: 1.2rem;
