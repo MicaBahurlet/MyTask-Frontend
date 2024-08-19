@@ -4,13 +4,14 @@ export const NavContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 2rem 2rem;
     background: var( --navFooter-color); 
     /* background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
     background: linear-gradient(to right, #4A00E0, #8E2DE2);  */
     color: #fff;
-    height: 4rem;
-    /* border-radius: 10px; */
+    height: 5rem;
+
+
 `;
 
 export const NavLogo = styled.h1`

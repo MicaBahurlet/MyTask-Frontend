@@ -6,35 +6,35 @@ import Hero from "../../components/Hero/Hero.jsx";
 
 function Home() {
 
-  const { tasks, loadTasks } = useTasks();
+  // const { tasks, loadTasks } = useTasks();
   
 
-  useEffect(() => { 
-    loadTasks();
-  }, []);
+  // useEffect(() => { 
+  //   loadTasks();
+  // }, []);
 
-  function renderMain () {
+  // function renderMain () {
 
-    if (tasks.length === 0) {
-      return <h3>Aún no creaste tareas</h3>
-    }
-    return tasks.map((task) => (
-        <TaskCard task={task} key={task.id} />
-    ))
-  }
+  //   if (tasks.length === 0) {
+  //     return <h3>Aún no creaste tareas</h3>
+  //   }
+  //   return tasks.map((task) => (
+  //       <TaskCard task={task} key={task.id} />
+  //   ))
+  // }
 
   return (
     <>
       
       <Hero />
 
-      <div>
+      {/* <div>
         <h2>Mis tareas:</h2>
 
         {renderMain()}
 
         
-      </div>
+      </div> */}
     </>  
   );
 }
