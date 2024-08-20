@@ -26,6 +26,7 @@ export const ImageContainer = styled.div`
 export const LoginWrapper = styled.div`
   flex: 1;
   max-width: 400px;
+
 `;
 
 export const LoginForm = styled.div`
