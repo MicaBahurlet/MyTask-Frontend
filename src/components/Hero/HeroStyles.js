@@ -39,7 +39,7 @@ export const HeroCTA = styled(Link)`
   text-align: center;
 
   &:hover {
-    background-color: #8e44ad;
+    background-color: var(--color-hover);
   }
 `;
 

@@ -14,6 +14,8 @@ import {
   LoadingMessage 
 } from "./TaskStyle.js";
 
+import Footer from "../../components/Footer/Footer.jsx";
+
 function TaskForm() {
   const { createTask, getTask, updateTask } = useTasks();
   const [task, setTask] = useState({
@@ -37,53 +39,57 @@ function TaskForm() {
   }, [params.id, getTask]);
 
   return (
-    <FormContainer>
-      <FormTitle>{params.id ? "Editar Tarea" : "Crear Tarea"}</FormTitle>
+    <>
+      <FormContainer>
+        <FormTitle>{params.id ? "Editar Tarea" : "Crear Tarea"}</FormTitle>
 
-      <Formik
-        initialValues={task} 
-        enableReinitialize={true}
-        onSubmit={async (values, actions) => {
-          if (params.id) {
-            await updateTask(params.id, values);
-            navigate("/dashboard"); // Redirige a /dashboard después de actualizar
-          } else {
-            await createTask(values);
-            navigate("/dashboard"); // Redirige a /dashboard después de crear
-          }
-          setTask({
-            title: "",
-            description: "",
-          });
-        }}
-      >
-        {({ handleChange, handleSubmit, values, isSubmitting }) => (
-          <StyledForm onSubmit={handleSubmit}>
-            <StyledLabel>Título</StyledLabel>
-            <StyledInput
-              type="text"
-              name="title"
-              placeholder="Tarea"
-              onChange={handleChange}
-              value={values.title}
-            />
+        <Formik
+          initialValues={task} 
+          enableReinitialize={true}
+          onSubmit={async (values, actions) => {
+            if (params.id) {
+              await updateTask(params.id, values);
+              navigate("/dashboard"); // Redirige a /dashboard después de actualizar
+            } else {
+              await createTask(values);
+              navigate("/dashboard"); // Redirige a /dashboard después de crear
+            }
+            setTask({
+              title: "",
+              description: "",
+            });
+          }}
+        >
+          {({ handleChange, handleSubmit, values, isSubmitting }) => (
+            <StyledForm onSubmit={handleSubmit}>
+              <StyledLabel>Título</StyledLabel>
+              <StyledInput
+                type="text"
+                name="title"
+                placeholder="Tarea"
+                onChange={handleChange}
+                value={values.title}
+              />
 
-            <StyledLabel>Descripción</StyledLabel>
-            <StyledTextarea
-              name="description"
-              rows="3"
-              placeholder="Descripción de tarea"
-              onChange={handleChange}
-              value={values.description}
-            />
+              <StyledLabel>Descripción</StyledLabel>
+              <StyledTextarea
+                name="description"
+                rows="3"
+                placeholder="Descripción de tarea"
+                onChange={handleChange}
+                value={values.description}
+              />
 
-            <SubmitButton type="submit" disabled={isSubmitting}>
-              {isSubmitting ? <LoadingMessage>Guardando...</LoadingMessage> : "Guardar"}
-            </SubmitButton>
-          </StyledForm>
-        )}
-      </Formik>
-    </FormContainer>
+              <SubmitButton type="submit" disabled={isSubmitting}>
+                {isSubmitting ? <LoadingMessage>Guardando...</LoadingMessage> : "Guardar"}
+              </SubmitButton>
+            </StyledForm>
+          )}
+        </Formik>
+      </FormContainer>
+      <Footer />
+    </>
+
   );
 }
 

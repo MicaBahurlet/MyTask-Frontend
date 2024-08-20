@@ -20,6 +20,7 @@ const Footer = () => {
       </FooterContent>
       <LogoMioContainer>
           <img src={LogoMio} alt="Logo" />
+          <p>📨 micabahurletgo@gmail.com</p>
       </LogoMioContainer>
 
     </FooterContainer>

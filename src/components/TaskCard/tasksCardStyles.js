@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: center;
   width: 100%;
   max-width: 300px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 15px;
   margin: 10px 0;
   transition: transform 0.2s ease-in-out;
-
 
   &:hover {
     transform: translateY(-5px);
@@ -23,13 +22,21 @@ export const Card = styled.div`
 export const Title = styled.h3`
   font-size: 1.5rem;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  text-align: flex-start;
+  word-wrap: break-word; /* Permite que el texto se ajuste dentro del contenedor */
 `;
 
 export const Description = styled.p`
   font-size: 1rem;
   color: #666;
   margin-bottom: 15px;
+  text-align: flex-start;
+  word-wrap: break-word; /* Permite que el texto se ajuste dentro del contenedor */
+  padding: 5px;
+  box-sizing: border-box;
+  white-space: pre-wrap; /* Mantiene los saltos de línea */
+  max-width: 250px;
 `;
 
 export const Status = styled.span`
@@ -51,7 +58,7 @@ export const ButtonGroup = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #007bff;
+  background-color: var( --btn-color);
   color: white;
   border: none;
   border-radius: 5px;
@@ -61,7 +68,7 @@ export const Button = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: var(--color-hover); 
   }
 
   &:first-of-type {
