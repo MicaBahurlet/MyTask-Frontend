@@ -1,96 +1,32 @@
-// import { useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import TaskCard from "../../components/TaskCard/tasksCard.jsx";
-// import { useTasks } from "../../context/taskContext.jsx";
-// import { DashboardContainer, TaskGrid, EmptyMessage, FabButton } from "./DashBoard.js";
 
-// function Dashboard() {
-//   const { tasks, loadTasks } = useTasks();
-
-//   useEffect(() => {
-//     loadTasks();
-//   }, []);
-
-//   function renderMain() {
-//     if (tasks.length === 0) {
-//       return <EmptyMessage>Aún no creaste tareas</EmptyMessage>;
-//     }
-//     return (
-//       <TaskGrid>
-//         {tasks.map((task) => (
-//           <TaskCard task={task} key={task.id} />
-//         ))}
-//       </TaskGrid>
-//     );
-//   }
-
-//   return (
-//     <DashboardContainer>
-//       <h2>Mis tareas:</h2>
-//       {renderMain()}
-//       <Link to="/new">
-//         <FabButton>+</FabButton>
-//       </Link>
-//     </DashboardContainer>
-//   );
-// }
-
-// export default Dashboard;
-
-
-
-
-// // import { useEffect } from "react";
-// // import TaskCard from "../../components/TaskCard/tasksCard.jsx";
-// // import { useTasks } from "../../context/taskContext.jsx";
-// // import { DashboardContainer, TaskGrid, EmptyMessage } from "./DashBoard.js";
-
-// // function Dashboard() {
-// //   const { tasks, loadTasks } = useTasks();
-
-// //   useEffect(() => {
-// //     loadTasks();
-// //   }, []);
-
-// //   function renderMain() {
-// //     if (tasks.length === 0) {
-// //       return <EmptyMessage>Aún no creaste tareas</EmptyMessage>;
-// //     }
-// //     return (
-// //       <TaskGrid>
-// //         {tasks.map((task) => (
-// //           <TaskCard task={task} key={task.id} />
-// //         ))}
-// //       </TaskGrid>
-// //     );
-// //   }
-
-// //   return (
-// //     <DashboardContainer>
-// //       <h2>Mis tareas:</h2>
-// //       {renderMain()}
-// //     </DashboardContainer>
-// //   );
-// // }
-
-// // export default Dashboard;
-
-
-
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import TaskCard from "../../components/TaskCard/tasksCard.jsx";
 import { useTasks } from "../../context/taskContext.jsx";
 import { DashboardContainer, TaskGrid, EmptyMessage, FabButton } from "./DashBoard.js";
+import Modal from "../../components/Modal/Modal";
 
 function Dashboard() {
   const { tasks, loadTasks } = useTasks();
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setShowModal(true);
+      return; // No cargar las tareas si no hay token
+    }
     loadTasks();
   }, [loadTasks]);
 
-  console.log('Tareas en Dashboard:', tasks); // Verificar el estado de tareas
+  useEffect(() => {
+    if (showModal) {
+      setTimeout(() => {
+        navigate('/login');
+      }, 4000); // 4 segundos antes de redirigir
+    }
+  }, [showModal, navigate]);
 
   function renderMain() {
     if (tasks.length === 0) {
@@ -105,16 +41,33 @@ function Dashboard() {
     );
   }
 
+  const handleModalClose = () => {
+    setShowModal(false);
+    navigate('/login');
+  };
+
   return (
-    <DashboardContainer>
-      <h2>Mis tareas:</h2>
-      {renderMain()}
-      <Link to="/new">
-        <FabButton>+</FabButton>
-      </Link>
-    </DashboardContainer>
+    <>
+      <DashboardContainer>
+        <h2>Mis tareas:</h2>
+        {renderMain()}
+        <Link to="/new">
+          <FabButton>+</FabButton>
+        </Link>
+      </DashboardContainer>
+      {showModal && (
+        <Modal 
+          message={
+            <>
+              <p>Debes iniciar sesión para visualizar tus tareas.</p>
+              <p>Serás redirigid@ a la página de inicio de sesión.</p>
+            </>
+          }
+          onClose={handleModalClose} 
+        />
+      )}
+    </>
   );
 }
 
 export default Dashboard;
-
