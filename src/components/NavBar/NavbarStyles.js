@@ -59,6 +59,9 @@ export const NavContainer = styled.nav`
 
 export const NavLogo = styled.h1`
     font-size: 1.5rem;
+    margin: 10px 3rem;
+    display: block;
+    
 `;
 
 export const NavLinks = styled.ul`
@@ -68,6 +71,7 @@ export const NavLinks = styled.ul`
     font-size: 1.2rem;
     font-weight: 600;
     font-family: var( --primary-font);
+    margin: 10px 3rem;
 
     li {
         cursor: pointer;

@@ -41,7 +41,8 @@ export const FabButton = styled.button`
   width: 60px;
   height: 60px;
    background-color: var( --navFooter-color);
-  /* background: linear-gradient(to right, #4286f4, #373B44); */ 
+   margin: 3rem 3rem;
+
   border: solid 1px var( --navFooter-color);
   border-radius: 50%;
   color: whitesmoke; /* Color del signo + */
