@@ -5,7 +5,7 @@ export const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
+  height: 65vh;
   margin-top: 8rem;
   padding: 20px;
 `;
@@ -32,6 +32,7 @@ export const StyledLabel = styled.label`
   font-size: 1rem;
   color: #666;
   margin-bottom: 10px;
+  font-weight: 700;
 `;
 
 export const StyledInput = styled.input`

@@ -1,51 +1,28 @@
-import ImgHero from "../../img/Hero.png";
-import { HeroContainer, HeroContent, HeroTitle, HeroDescription, HeroCTA, HeroImageContainer, HeroImage } from "./HeroStyles.js";
 
-export default function Hero() {
+
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import ImgHero from "../../img/Hero.png";
+import { HeroContainer, HeroContent, HeroTitle, HeroDescription, HeroCTA, HeroImageContainer, HeroImage } from './HeroStyles.js';
+
+function Hero() {
+    const token = localStorage.getItem('token'); // verifica token en localStorage
+
     return (
         <HeroContainer>
             <HeroContent>
-                <HeroTitle>
-                    Administrá tu tiempo de manera eficiente.
-                </HeroTitle>
-                <HeroDescription>
-                    MyTask. Crea y editá tus tareas
-                </HeroDescription>
-                
-                <HeroCTA to="/login">
-                    Iniciar sesión
+                <HeroTitle>Administrá tu tiempo de manera eficiente.</HeroTitle>
+                <HeroDescription>MyTask. Crea y editá tus tareas</HeroDescription>
+                <HeroCTA to={token ? '/dashboard' : '/login'}>
+                    {token ? 'Crear Tarea' : 'Iniciar Sesión'}
                 </HeroCTA>
             </HeroContent>
             <HeroImageContainer>
-                <HeroImage src={ImgHero} alt="Hero" />
-            </HeroImageContainer>
+                 <HeroImage src={ImgHero} alt="Hero" />
+             </HeroImageContainer>
         </HeroContainer>
     );
 }
 
-
-
-// import ImgHero from "../../img/Hero.png";
-// import { HeroContainer, HeroContent, HeroTitle, HeroDescription, HeroCTA, HeroImageContainer, HeroImage } from "./HeroStyles.js";
-
-// export default function Hero() {
-//     return (
-//         <HeroContainer>
-//             <HeroContent>
-//                 <HeroTitle>
-//                     Administrá tu tiempo de manera eficiente.
-//                 </HeroTitle>
-//                 <HeroDescription>
-//                     MyTask. Crea y editá tus tareas
-//                 </HeroDescription>
-                
-//                 <HeroCTA to="/login">
-//                     Iniciar sesion
-//                 </HeroCTA>
-//             </HeroContent>
-//             <HeroImageContainer>
-//                 <HeroImage src={ImgHero} alt="Hero" />
-//             </HeroImageContainer>
-//         </HeroContainer>
-//     );
-// }
+export default Hero;

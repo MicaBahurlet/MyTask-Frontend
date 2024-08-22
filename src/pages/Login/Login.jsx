@@ -60,7 +60,7 @@ const LoginPage = () => {
 
                   <Form>
                     <LoginForm>
-                      <h1>Tus datos:</h1>
+                      <h1>Iniciar sesión:</h1>
                       <div>
                         <Field name="email" as={LoginField} placeholder="Correo Electrónico" />
                         <ErrorMessage name="email" component={LoginError} />
