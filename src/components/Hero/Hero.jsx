@@ -5,6 +5,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ImgHero from "../../img/Hero.png";
 import { HeroContainer, HeroContent, HeroTitle, HeroDescription, HeroCTA, HeroImageContainer, HeroImage } from './HeroStyles.js';
+import { Fade, Flip, Hinge, JackInTheBox, Roll, Slide, Zoom } from 'react-awesome-reveal';
 
 function Hero() {
     const token = localStorage.getItem('token'); // verifica token en localStorage
@@ -19,7 +20,9 @@ function Hero() {
                 </HeroCTA>
             </HeroContent>
             <HeroImageContainer>
-                 <HeroImage src={ImgHero} alt="Hero" />
+                <Zoom direction='in' duration={2000}>
+                    <HeroImage src={ImgHero} alt="Hero" />
+                </Zoom>
              </HeroImageContainer>
         </HeroContainer>
     );

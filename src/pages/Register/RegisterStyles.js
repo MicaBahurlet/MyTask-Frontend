@@ -4,9 +4,10 @@ export const RegisterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 0 90px;
   max-width: 1200px;
-  margin: 7rem auto;
+  margin: 6rem auto;
+  gap: 5rem;
 `;
 
 export const ImageContainer = styled.div`
@@ -58,11 +59,14 @@ export const RegisterButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;  /* Asegúrate de que ocupe el ancho completo del contenedor */
+  width: 100%;  
 
   &:disabled {
     background-color: lightgray;
     cursor: not-allowed;
+  }
+  &:hover {
+    background-color: var(--color-hover);
   }
 `;
 

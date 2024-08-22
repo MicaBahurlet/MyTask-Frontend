@@ -61,6 +61,7 @@ export const NavLogo = styled.h1`
     font-size: 1.5rem;
     margin: 10px 3rem;
     display: block;
+    user-select: none;
     
 `;
 
@@ -72,6 +73,7 @@ export const NavLinks = styled.ul`
     font-weight: 600;
     font-family: var( --primary-font);
     margin: 10px 3rem;
+    user-select: none;
 
     li {
         cursor: pointer;

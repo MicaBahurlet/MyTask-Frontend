@@ -66,6 +66,9 @@ export const LoginButton = styled.button`
     background-color: lightgray;
     cursor: not-allowed;
   }
+  &:hover {
+    background-color: var(--color-hover);
+  }
 `;
 
 export const LoginError = styled.div`

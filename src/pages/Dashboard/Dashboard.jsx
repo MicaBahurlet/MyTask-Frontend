@@ -59,8 +59,8 @@ function Dashboard() {
         <Modal 
           message={
             <>
-              <p>Debes iniciar sesión para crear y visualizar tus tareas</p>
-              <p><i>redirigiendo...</i></p>
+              <p >Debes iniciar sesión para crear y visualizar tus tareas</p>
+              <p style={{ fontSize: '14px', marginTop: '10px', fontWeight: 'lighter' }}><i>Redirigiendo...</i></p>
             </>
           }
           onClose={handleModalClose} 

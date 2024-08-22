@@ -7,7 +7,7 @@ export const registerUser = async (userData) => {
     const response = await axios.post(`${BASE_URL}/auth/register`, userData);
     return response.data;
   } catch (error) {
-    console.error("Error en la solicitud de registro:", error); // Agregar mensaje de error
+    console.error("Error en la solicitud de registro:", error); //  mensaje de error
     throw error.response ? error.response.data : { message: 'Error en la conexión con el servidor' };
   }
 };
@@ -18,7 +18,7 @@ export const loginUser = async (userData) => {
     const response = await axios.post(`${BASE_URL}/auth/login`, userData);
     return response.data;
   } catch (error) {
-    console.error("Error en la solicitud de inicio de sesión:", error); // Agregar mensaje de error
+    console.error("Error en la solicitud de inicio de sesión:", error); 
     throw error.response ? error.response.data : { message: 'Error en la conexión con el servidor' };
   }
 };
