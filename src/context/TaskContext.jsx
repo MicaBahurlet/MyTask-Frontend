@@ -30,7 +30,7 @@ export const TaskContextProvider = ({ children }) => {
   async function loadTasks() {
     try {
       const response = await getTasksRequest();
-      console.log('Tareas cargadas:', response.data); // Verificar la respuesta
+      console.log('Tareas cargadas:', response.data); // Agregar verificacion de usuario, quiero que me traiga solo las tareas de ese user
       setTasks(response.data);
     } catch (error) {
       console.log(error);

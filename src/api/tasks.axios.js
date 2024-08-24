@@ -1,27 +1,34 @@
-import axios from "axios";
-import { BASE_URL } from "../utils/const";
+import axiosInstance from "./axios.config";
+import { BASE_URL } from "../utils/const"; // toDo: borrar de cada fn el BASE_URL
+
+export const getTasksRequest = async () => {
+    return await axiosInstance.get(`${BASE_URL}/tasks`);
+    
+}
 
 
+export const createTaskRequest = async (task) => {
+  const token = localStorage.getItem("token");
+  task.token = token;
+  await axiosInstance.post(
+    `/tasks`,
+    task
+  );
 
-export const getTasksRequest = async () =>
-  await axios.get(`${BASE_URL}/tasks`);
-
-
-export const createTaskRequest = async (task) =>
-  await axios.post(`${BASE_URL}/tasks`, task);
+};
 
 // a los errores los manejo desde formik, por eso lo exporto así
 
 export const deleteTaskRequest = async (id) =>
-  await axios.delete(`${BASE_URL}/tasks/${id}`);
+  await axiosInstance.delete(`${BASE_URL}/tasks/${id}`);
 
 export const getTaskRequest = async (id) =>
-  await axios.get(`${BASE_URL}/tasks/${id}`);
+  await axiosInstance.get(`${BASE_URL}/tasks/${id}`);
 
 export const updateTaskRequest = async (id, newFields) =>
-  await axios.put(`${BASE_URL}/tasks/${id}`, newFields);
+  await axiosInstance.put(`${BASE_URL}/tasks/${id}`, newFields);
 
 export const toggleTaskDoneRequest = async (id, done) =>
-  await axios.put(`${BASE_URL}/tasks/${id}`, {
-    done, 
+  await axiosInstance.put(`${BASE_URL}/tasks/${id}`, {
+    done,
   });

@@ -8,6 +8,7 @@ import Modal from "../../components/Modal/Modal";
 
 function Dashboard() {
   const { tasks, loadTasks } = useTasks();
+
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
@@ -18,6 +19,7 @@ function Dashboard() {
       return; // No cargar las tareas si no hay token
     }
     loadTasks();
+    
   }, [loadTasks]);
 
   useEffect(() => {
@@ -29,6 +31,7 @@ function Dashboard() {
   }, [showModal, navigate]);
 
   function renderMain() {
+    console.log ("Tareas:", tasks);
     if (tasks.length === 0) {
       return <EmptyMessage>Aún no creaste tareas</EmptyMessage>;
     }

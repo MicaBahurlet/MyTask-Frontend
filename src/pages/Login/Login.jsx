@@ -7,6 +7,7 @@ import ImgLogin from '../../img/Task2.png';
 import Footer from '../../components/Footer/Footer.jsx';
 import { loginUser } from '../../api/user.axios.js';
 import { Bounce, Fade, Flip, Zoom } from 'react-awesome-reveal';
+import axios from 'axios';
 
 const LoginPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,6 +39,8 @@ const LoginPage = () => {
       console.log("Respuesta del servidor:", response);
 
       localStorage.setItem('token', response.token);
+      axios.defaults.headers.common['Authorization'] = `Bearer ${response.token}`;
+
       navigate('/dashboard');
     } catch (error) {
       console.error("Error en el inicio de sesión:", error);
