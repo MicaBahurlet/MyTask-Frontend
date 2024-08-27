@@ -88,6 +88,11 @@ export const TaskContextProvider = ({ children }) => {
     }
   };
 
+    //fn para poder limpiar las tareas del localStorage, solo afecta al navegador
+ const clearTasks = () => {
+    setTasks([]);
+  };
+
   return (
     <TaskContext.Provider
       value={{
@@ -98,6 +103,7 @@ export const TaskContextProvider = ({ children }) => {
         getTask,
         updateTask,
         toggleTaskDone,
+        clearTasks,
       }}
     >
       {children}

@@ -6,16 +6,13 @@ export const getTasksRequest = async () => {
     
 }
 
-
 export const createTaskRequest = async (task) => {
-  const token = localStorage.getItem("token");
-  task.token = token;
   await axiosInstance.post(
     `/tasks`,
     task
   );
-
 };
+
 
 // a los errores los manejo desde formik, por eso lo exporto así
 

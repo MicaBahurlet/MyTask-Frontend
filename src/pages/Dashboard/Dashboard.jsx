@@ -7,20 +7,22 @@ import { DashboardContainer, TaskGrid, EmptyMessage, FabButton } from "./DashBoa
 import Modal from "../../components/Modal/Modal";
 
 function Dashboard() {
-  const { tasks, loadTasks } = useTasks();
+  const { tasks, loadTasks, clearTasks } = useTasks();
 
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
+
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token'); //poder acceder al token ya que quiero que cargue las tareas solo si hay un token
     if (!token) {
       setShowModal(true);
-      return; // No cargar las tareas si no hay token
+      clearTasks(); // limpiar las tareas si no hay token
+      return; // no cargar las tareas si no hay token
     }
     loadTasks();
-    
-  }, [loadTasks]);
+  }, []);
+  
 
   useEffect(() => {
     if (showModal) {
