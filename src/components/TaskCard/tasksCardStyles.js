@@ -47,12 +47,13 @@ export const Status = styled.span`
 export const Date = styled.span`
   font-size: 0.9rem;
   color: #999;
+  margin-bottom: 1rem;
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   justify-content: space-between;
   margin-top: 15px;
 `;
@@ -60,7 +61,7 @@ export const ButtonGroup = styled.div`
 export const Button = styled.button`
   background-color: var( --btn-color);
   color: white;
-  border: none;
+  border: solid 1px var( --btn-color);
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
@@ -69,6 +70,7 @@ export const Button = styled.button`
 
   &:hover {
     background-color: var(--color-hover); 
+    color: white;
   }
 
   &:first-of-type {

@@ -4,7 +4,7 @@ export const CalendarWrapper = styled.div`
   width: 90%;
   margin: 20px 0;
   margin: 20px auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
   padding: 20px;
   background-color: #fff;
   border-radius: 15px;
@@ -24,7 +24,8 @@ export const CalendarWrapper = styled.div`
     gap: 10px;
 
     button {
-      background-color: darkviolet;
+      
+      background-color: var( --btn-color);
       color: white;
       border: none;
       border-radius: 10px;
@@ -67,7 +68,7 @@ export const CalendarWrapper = styled.div`
   }
 
   .react-calendar__tile--now {
-    background: darkviolet;
+    background-color: var( --btn-color);
     color: white;
     
   }
@@ -77,8 +78,7 @@ export const CalendarWrapper = styled.div`
 
         &:hover,
         &.react-calendar__tile--active {
-        background-color: darkviolet;
-        color: white;
+        color: black;
         }
   }
 `;
