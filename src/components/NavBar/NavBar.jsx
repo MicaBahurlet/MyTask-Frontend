@@ -5,11 +5,11 @@ import { NavContainer, NavLogo, NavLinks } from './NavbarStyles.js';
 
 function NavBar() {
     const navigate = useNavigate();
-    const token = localStorage.getItem('token'); // Verifica si hay un token en localStorage
+    const token = localStorage.getItem('token'); // verifica si hay un token en localStorage
 
     const handleLogout = () => {
-        localStorage.removeItem('token'); // Elimina el token del localStorage
-        navigate('/login'); // Redirige al usuario a la página de login
+        localStorage.removeItem('token'); // elimina el token del localStorage
+        navigate('/login'); // redirige al usuario a la página de login
     };
 
     return (
@@ -19,13 +19,16 @@ function NavBar() {
             </NavLogo>
             <NavLinks>
                 <li><Link to="/">Home</Link></li>
+                
+                <li><Link to="/tips">Tips</Link></li>
+                <li><Link to="/dashboard">Mis Tareas</Link></li>
                 {!token ? (
                     <li><Link to="/login">Iniciar Sesión</Link></li>
                 ) : (
                     <li><button onClick={handleLogout}>Cerrar Sesión</button></li>
                 )}
-                <li><Link to="/dashboard">Mis Tareas</Link></li>
-                {/* <li><Link to="/new">Crear Tarea</Link></li> */}
+                
+                
             </NavLinks>
         </NavContainer>
     );

@@ -9,7 +9,7 @@ export const DashboardContainer = styled.div`
 `;
 
 export const Sidebar = styled.div`
-  width: 30%;
+  width: 26%;
   padding: 20px;
   background-color: #f7f7f7;
   border-right: 1px solid #ddd;
@@ -30,7 +30,7 @@ export const Sidebar = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  width: 70%;
+  width: 74%;
   padding: 20px;
   overflow-y: auto; //scroll sono en el contentContainer, solo tareas
   box-sizing: border-box;

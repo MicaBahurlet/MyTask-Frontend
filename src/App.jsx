@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
+import Tips from "./pages/Tips/Tips.jsx";
 
 import { TaskContextProvider } from "./context/taskContext.jsx";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="tips" element={<Tips />} />
           <Route path="*" element={<NotFound />} /> 
         </Routes>
       </TaskContextProvider>
