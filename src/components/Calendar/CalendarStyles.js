@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const CalendarWrapper = styled.div`
   width: 90%;
-  margin: 20px 0;
-  margin: 20px auto;
+  margin: 2px auto;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
   padding: 20px;
   background-color: #fff;

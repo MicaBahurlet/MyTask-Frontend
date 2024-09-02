@@ -43,23 +43,23 @@ const Tips = () => {
         <Section>
           <SectionTitle>Consejos para optimizar el tiempo</SectionTitle>
           <Paragraph>
-            1. <b>Prioriza tus tareas:</b> Enfócate en lo que realmente importa.
+            1. <b>Prioriza tus tareas:</b> enfocate en lo que realmente importa.
             Identifica las tareas más importantes y asegúrate de realizarlas
             primero.
           </Paragraph>
           <Paragraph>
-            2. <b>Divide grandes proyectos:</b> Divide grandes proyectos: Descompón tareas grandes en pasos
+            2. <b>Divide grandes proyectos:</b> dividí tareas grandes en pasos
             más pequeños y manejables. Esto te ayudará a avanzar sin sentirte
             abrumado.
           </Paragraph>
           <Paragraph>
-            3. <b>Establece límites de tiempo:</b> Dedica un tiempo específico a cada
-            tarea y cúmplelo. Esto evita que te distraigas o prolongues
+            3. <b>Establece límites de tiempo:</b> dedica un tiempo específico a cada
+            tarea y cumplí con ese tiempo. Esto evita que te distraigas o prolongues tareas
             innecesariamente.
           </Paragraph>
           <Paragraph>
-            4. <b>Elimina distracciones:</b> Identifica las fuentes de distracción y
-            minimízalas mientras trabajas. Esto incluye apagar notificaciones y
+            4. <b>Elimina distracciones:</b> identifica las fuentes de distracción y
+            minimizalas mientras trabajas. Esto incluye apagar notificaciones y
             crear un entorno de trabajo adecuado.
           </Paragraph>
         </Section>

@@ -1,5 +1,4 @@
 
-
 import React from "react";
 import { useTasks } from "../../context/taskContext";
 import { useNavigate } from "react-router-dom";
@@ -10,14 +9,15 @@ import {
   Status,
   Date as DateStyled,
   ButtonGroup,
-  Button
+  Button,
+  StatusPin,  
+  StatusWrapper 
 } from "./tasksCardStyles.js";
 
-// Importando íconos de la librería @emotion-icons
 import { Edit } from '@emotion-icons/material-outlined/Edit';
 import { Delete } from '@emotion-icons/material-outlined/Delete';
 
-import { format } from 'date-fns';
+import { format, differenceInCalendarDays } from 'date-fns';
 import es from 'date-fns/locale/es';
 
 function TaskCard({ task }) {
@@ -28,13 +28,28 @@ function TaskCard({ task }) {
     return format(new Date(isoString), "dd 'de' MMMM 'de' yyyy", { locale: es });
   };
 
+  const calculateStatus = (createAt) => {
+    const daysDifference = differenceInCalendarDays(new Date(), new Date(createAt));
+
+    if (daysDifference === 0) return { text: "Hoy", color: "#4CAF50" }; 
+    if (daysDifference === 1) return { text: "De ayer", color: "#FF9800" }; 
+    if (daysDifference >= 2) return { text: "Atrasada", color: "#F44336" }; 
+  };
+
+  const { text, color } = calculateStatus(task.createAt);
+
   const handleDone = async () => {
     await toggleTaskDone(task.id);
   };
 
   return (
-    <Card>
+    //agregar done para opacidad si está completa
+    <Card done={task.done}> 
       <Title>{task.title}</Title>
+      <StatusWrapper>
+        <StatusPin color={color} />
+        <span>{text}</span>
+      </StatusWrapper>
       <Description>{task.description}</Description>
       <DateStyled>{formatDate(task.createAt)}</DateStyled>
       <Status>{task.done === 1 ? "✅" : "⌛"}</Status>
@@ -45,7 +60,7 @@ function TaskCard({ task }) {
         <Button onClick={() => deleteTask(task.id)}>
           <Delete size={17} color="white" />
         </Button>
-        <Button onClick={() => handleDone(task.done)}>
+        <Button onClick={handleDone}>
           {task.done === 1 ? "Completada" : "Completar"}
         </Button>
       </ButtonGroup>
@@ -54,6 +69,8 @@ function TaskCard({ task }) {
 }
 
 export default TaskCard;
+
+
 
 
 // import React from "react";
@@ -69,6 +86,10 @@ export default TaskCard;
 //   Button
 // } from "./tasksCardStyles.js";
 
+// // Importando íconos de la librería @emotion-icons
+// import { Edit } from '@emotion-icons/material-outlined/Edit';
+// import { Delete } from '@emotion-icons/material-outlined/Delete';
+
 // import { format } from 'date-fns';
 // import es from 'date-fns/locale/es';
 
@@ -77,7 +98,6 @@ export default TaskCard;
 //   const navigate = useNavigate();
 
 //   const formatDate = (isoString) => {
-//     // date esta llamando al constructor nativo de Js
 //     return format(new Date(isoString), "dd 'de' MMMM 'de' yyyy", { locale: es });
 //   };
 
@@ -92,9 +112,15 @@ export default TaskCard;
 //       <DateStyled>{formatDate(task.createAt)}</DateStyled>
 //       <Status>{task.done === 1 ? "✅" : "⌛"}</Status>
 //       <ButtonGroup>
-//         <Button onClick={() => navigate(`/edit/${task.id}`)}>✍️</Button>
-//         <Button onClick={() => deleteTask(task.id)}>🗑️</Button>
-//         <Button onClick={() => handleDone(task.done)}>Completa</Button>
+//         <Button onClick={() => navigate(`/edit/${task.id}`)}>
+//           <Edit size={17} color="white" />
+//         </Button>
+//         <Button onClick={() => deleteTask(task.id)}>
+//           <Delete size={17} color="white" />
+//         </Button>
+//         <Button onClick={() => handleDone(task.done)}>
+//           {task.done === 1 ? "Completada" : "Completar"}
+//         </Button>
 //       </ButtonGroup>
 //     </Card>
 //   );

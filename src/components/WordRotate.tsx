@@ -1,10 +1,8 @@
-// "use client";
 
-// import { cn } from "../lib/utils";
-
-// import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 // import { useEffect, useState } from "react";
+// import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 
+// import { cn } from "../lib/utils.ts";
 
 // interface WordRotateProps {
 //   words: string[];
@@ -36,18 +34,16 @@
 //   }, [words, duration]);
 
 //   return (
-
-//       <div className="overflow-hidden py-2">
-//         <AnimatePresence mode="wait">
-//           <motion.h1
-//             key={words[index]}
-//             className={cn(className)}
-//             {...framerProps}
-//           >
-//             {words[index]}
-//           </motion.h1>
-//         </AnimatePresence>
-//       </div>
+//     <div className="overflow-hidden py-2">
+//       <AnimatePresence mode="wait">
+//         <motion.h1
+//           key={words[index]}
+//           className={cn(className)}
+//           {...framerProps}
+//         >
+//           {words[index]}
+//         </motion.h1>
+//       </AnimatePresence>
+//     </div>
 //   );
 // }
-

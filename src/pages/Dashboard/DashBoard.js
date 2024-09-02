@@ -70,8 +70,8 @@ export const FabButton = styled.button`
   position: fixed;
   bottom: 20px;
   right: 30px;
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   background-color: var(--navFooter-color);
   margin: 3rem 3rem;
   border: solid 1px var(--navFooter-color);

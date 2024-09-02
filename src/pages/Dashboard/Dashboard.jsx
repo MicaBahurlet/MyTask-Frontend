@@ -6,7 +6,7 @@ import { useTasks } from "../../context/taskContext.jsx";
 import { DashboardContainer, Sidebar, TaskGrid, EmptyMessage, FabButton, SearchInput, SearchWrapper, SearchIcon, ContentContainer } from "./DashBoard.js";
 import Modal from "../../components/Modal/Modal";
 import CalendarWidget from "../../components/Calendar/CalendarWidget.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
+import TaskStatusIndicator from "../../components/TasksStatus/TasksStatus.jsx";
 
 function Dashboard() {
   const { tasks, loadTasks, clearTasks } = useTasks();
@@ -76,7 +76,9 @@ function Dashboard() {
             />
             <SearchIcon />
           </SearchWrapper>
+          <TaskStatusIndicator />
           <CalendarWidget />
+          
         </Sidebar>
         <ContentContainer>
           <h2>Mis tareas:</h2>

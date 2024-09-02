@@ -6,6 +6,7 @@ import { HeroContainer, HeroContent, HeroTitle, HeroDescription, HeroCTA, HeroIm
 // import {  Zoom } from 'react-awesome-reveal';
 // import WordRotateDemo from '../WordRotate/WordRotate.jsx';
 
+
 function Hero() {
     const token = localStorage.getItem('token'); // verifica token en localStorage
 
