@@ -26,7 +26,6 @@ export const ImageContainer = styled.div`
 export const LoginWrapper = styled.div`
   flex: 1;
   max-width: 400px;
-
 `;
 
 export const LoginForm = styled.div`
@@ -40,7 +39,7 @@ export const LoginField = styled.input`
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  width: 100%;  /* ancho de los imputs */
+  width: 100%; 
 
   &:focus {
     border-color: darkviolet;
@@ -48,12 +47,30 @@ export const LoginField = styled.input`
   }
 `;
 
+export const PasswordWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+export const ToggleIcon = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+
+  &:hover {
+    color: darkviolet;
+  }
+`;
+
 export const LoginButton = styled.button`
   padding: 15px;
   border-radius: 10px;
   border: none;
-  /* background-color: violet; */
-  background-color: var( --btn-color);
+  background-color: var(--btn-color);
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -66,6 +83,7 @@ export const LoginButton = styled.button`
     background-color: lightgray;
     cursor: not-allowed;
   }
+
   &:hover {
     background-color: var(--color-hover);
   }

@@ -52,7 +52,7 @@ export const RegisterButton = styled.button`
   padding: 15px;
   border-radius: 10px;
   border: none;
-  background-color: var( --btn-color);
+  background-color: var(--btn-color);
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -87,5 +87,23 @@ export const Loader = styled.div`
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+`;
+
+export const PasswordWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const ToggleIcon = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+
+  &:hover {
+    color: darkviolet;
   }
 `;
