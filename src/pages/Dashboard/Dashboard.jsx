@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TaskCard from "../../components/TaskCard/tasksCard.jsx";
-import { useTasks } from "../../Context/TaskContext.jsx";
+import { useTasks } from "../../context/TaskContext.jsx";
 import { DashboardContainer, Sidebar, TaskGrid, EmptyMessage, FabButton, SearchInput, SearchWrapper, SearchIcon, ContentContainer } from "./DashBoard.js";
 import Modal from "../../components/Modal/Modal";
 import CalendarWidget from "../../components/Calendar/CalendarWidget.jsx";

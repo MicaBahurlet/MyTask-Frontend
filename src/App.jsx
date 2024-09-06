@@ -9,7 +9,7 @@ import Register from "./pages/Register/Register.jsx";
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
 import Tips from "./pages/Tips/Tips.jsx";
 
-import  { TaskContextProvider } from "./Context/TaskContext.jsx";
+import  { TaskContextProvider } from "./context/TaskContext.jsx";
 
 function App() {
   return (

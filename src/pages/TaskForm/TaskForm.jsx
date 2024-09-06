@@ -1,5 +1,5 @@
 import { Formik, Form } from "formik";
-import { useTasks } from "../../Context/TaskContext.jsx";
+import { useTasks } from "../../context/TaskContext.jsx";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
