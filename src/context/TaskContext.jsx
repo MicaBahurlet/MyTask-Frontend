@@ -30,7 +30,7 @@ export const TaskContextProvider = ({ children }) => {
   async function loadTasks() {
     try {
       const response = await getTasksRequest();
-      console.log('Tareas cargadas:', response.data); // Agregar verificacion de usuario, quiero que me traiga solo las tareas de ese user
+      console.log('Tareas cargadas:', response.data); //  verificacion de usuario, quiero que me traiga solo las tareas de ese user
       setTasks(response.data);
     } catch (error) {
       console.log(error);
@@ -49,8 +49,8 @@ export const TaskContextProvider = ({ children }) => {
   const createTask = async (task) => {
     try {
       const response = await createTaskRequest(task);
-      console.log('Tarea creada:', response.data); // Verificar la respuesta
-      await loadTasks(); // Vuelve a cargar las tareas después de crear una nueva
+      console.log('Tarea creada:', response.data); // verificar la respuesta
+      await loadTasks(); // vuelve a cargar las tareas después de crear una nueva
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +68,7 @@ export const TaskContextProvider = ({ children }) => {
   const updateTask = async (id, newFields) => {
     try {
       const response = await updateTaskRequest(id, newFields);
-      console.log('Tarea actualizada:', response.data); // Verificar la respuesta
+      console.log('Tarea actualizada:', response.data); // verifica la respuesta
     } catch (error) {
       console.log(error);
     }
