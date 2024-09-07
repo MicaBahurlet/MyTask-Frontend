@@ -70,7 +70,7 @@ export const ImgContainer = styled.div`
 
   img {
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     height: auto;
     border-radius: 10px;
   }

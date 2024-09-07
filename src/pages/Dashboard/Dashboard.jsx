@@ -43,7 +43,7 @@ function Dashboard() {
 
   function renderMain() {
     if (searchTerm && filteredTasks.length === 0) {
-      return <EmptyMessage>Ninguna tarea coincide con esa palabra</EmptyMessage>;
+      return <EmptyMessage>Ninguna tarea coincide con esta búsqueda...</EmptyMessage>;
     }
     if (filteredTasks.length === 0) {
       return <EmptyMessage>Aún no creaste tareas</EmptyMessage>;
@@ -88,7 +88,6 @@ function Dashboard() {
           <FabButton>+</FabButton>
         </Link>
       </DashboardContainer>
-      {/* <Footer /> */}
       {showModal && (
         <Modal 
           message={

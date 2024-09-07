@@ -11,7 +11,7 @@ import {
   ImgContainer
 } from "./TipsStyles.js";
 import Footer from "../../components/Footer/Footer.jsx";
-import ImgTips from "../../img/Tips2.jpg";
+import ImgTips from "../../img/Hero2.png";
 
 const Tips = () => {
   return (

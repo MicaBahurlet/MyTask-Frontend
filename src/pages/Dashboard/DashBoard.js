@@ -68,7 +68,7 @@ export const EmptyMessage = styled.h3`
 
 export const FabButton = styled.button`
   position: fixed;
-  bottom: 20px;
+  bottom: 25px;
   right: 30px;
   width: 75px;
   height: 75px;
@@ -87,8 +87,11 @@ export const FabButton = styled.button`
   
   &:hover {
     background-color: var(--color-hover);
+
   }
 `;
+
+
 
 export const SearchWrapper = styled.div`
   position: relative;

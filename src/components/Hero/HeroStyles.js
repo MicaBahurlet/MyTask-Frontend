@@ -47,7 +47,8 @@ export const HeroImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 45%; /* Ajustado para que la imagen ocupe un espacio proporcional */
+  max-width: 45%; //tamaño proporcional
+  margin: 0 6%;
 `;
 
 export const HeroImage = styled.img`
