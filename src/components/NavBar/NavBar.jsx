@@ -9,7 +9,7 @@ function NavBar() {
 
     const handleLogout = () => {
         localStorage.removeItem('token'); // elimina el token del localStorage
-        navigate('/login'); // redirige al usuario a la página de login
+        navigate('/'); // redirige al usuario a la página de Home
     };
 
     return (
